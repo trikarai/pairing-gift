@@ -34,10 +34,13 @@
      <span class="red"> <?php echo form_error('clue3'); ?> </span>
  
  <p>Term and Conditions:</p>
+ 
+ <p>setuju membayar kelebihan jika barang melebihi batas harga yang ditentukan panitia?</p>
     <p>
-		<input type="checkbox" name="accept" value="1"/>&nbsp; &nbsp;Saya Setuju untuk membayar kelebihan harga jika lebih dari harga yang ditetapkan panitia
+        <input type="radio" name="code" value="Yes"/>Yes<br>
+        <input type="radio" name="code" value="No"/>No<br>
      </p>
-     <span class="red"> <?php echo form_error('accept'); ?> </span>
+     <span class="red"> <?php echo form_error('code'); ?> </span>
  
      <p>
 		<button type="submit" class="btn blue">Submit</button>

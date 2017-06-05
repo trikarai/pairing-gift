@@ -6,7 +6,7 @@ class Beranda extends CI_Controller {
 		parent::__construct();
 		$this->load->library(array('form_validation'));
 		$this->load->helper(array('url','form'));
-		$this->load->model('m_setting'); //call model
+		$this->load->model('M_setting'); //call model
 	}
      
 	public function index()

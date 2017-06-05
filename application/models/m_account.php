@@ -37,13 +37,15 @@
 	  $this->clue1 = $data['clue1'];
   	  $this->clue2 = $data['clue2'];
   	  $this->clue3 = $data['clue3'];
+          $this->code = $data['code'];
   }
 
   function updatePresent($id){
 	  $data = array(
 			'clue1' => $this->clue1,
 			'clue2' => $this->clue2,
-			'clue3' => $this->clue3
+			'clue3' => $this->clue3,
+                        'code' => $this->code
 	  );
 	$this->db->where($this->key,$id);
 	$this->db->update($this->table,$data);

@@ -7,7 +7,7 @@
          parent::__construct();
          $this->load->library(array('form_validation'));
          $this->load->helper(array('url','form'));
-         $this->load->model('m_account'); //call model
+         $this->load->model('M_account'); //call model
      }
  
      public function index(){
@@ -23,14 +23,14 @@
             // $this->load->view('pairing/v_pairing');
         }else{
             
-            $id_partner = $this->m_account->getRandomPartner($this->input->post('id_user'));
+            $id_partner = $this->M_account->getRandomPartner($this->input->post('id_user'));
             
             $data['id_user'] = $this->input->post('id_user');
             $data['id_partner'] = $id_partner;
             
-            $this->m_account->setPairing($data);
+            $this->M_account->setPairing($data);
             
-            $this->m_account->updatePairing($this->input->post('id_user'),$id_partner);             
+            $this->M_account->updatePairing($this->input->post('id_user'),$id_partner);             
             $data['message'] =    "Pairing berhasil";
             
 			$data['title'] = "Pairing";

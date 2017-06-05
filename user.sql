@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 03, 2017 at 09:05 AM
+-- Generation Time: Jun 05, 2017 at 08:39 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `user` (
-  `id_user` int(4) NOT NULL,
+  `id_user` binary(16) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(200) NOT NULL,
   `code` varchar(20) NOT NULL,
@@ -38,7 +38,7 @@ CREATE TABLE `user` (
   `transmiting` tinyint(1) NOT NULL,
   `receiving` tinyint(1) NOT NULL,
   `status` tinyint(1) NOT NULL DEFAULT '1',
-  `partner_id` int(4) NOT NULL DEFAULT '0'
+  `partner_id` binary(16) NOT NULL DEFAULT '\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0'
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
@@ -46,9 +46,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `email`, `password`, `code`, `name`, `clue1`, `clue2`, `clue3`, `transmiting`, `receiving`, `status`, `partner_id`) VALUES
-(6, 'septian@gmail.com', '202cb962ac59075b964b07152d234b70', '', 'septian', '', '', '', 0, 0, 1, 5),
-(5, 'tomi@gmail.com', '202cb962ac59075b964b07152d234b70', '', 'Tomi', 'sskdskj', 'kjdksjd', 'dsjdskj', 0, 0, 1, 4),
-(4, 'tri@gmail.com', '202cb962ac59075b964b07152d234b70', '', 'Tri', '13', '333', '444', 0, 0, 1, 6);
+(0x61303531383332632d343962392d3131, 'tri@barapraja.com', '202cb962ac59075b964b07152d234b70', '', 'Tri', '', '', '', 0, 0, 1, 0x00000000000000000000000000000000);
 
 --
 -- Indexes for dumped tables
@@ -61,15 +59,6 @@ ALTER TABLE `user`
   ADD PRIMARY KEY (`id_user`),
   ADD UNIQUE KEY `email` (`email`,`code`);
 
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `user`
---
-ALTER TABLE `user`
-  MODIFY `id_user` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

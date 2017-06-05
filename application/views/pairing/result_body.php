@@ -13,10 +13,11 @@
       
       <p>pilih salah satu hadiah untuk diberi :</p>
       
-      <p>      hadiah 1 : <?php echo @$dataPartner[0]['clue1'] ?></p>
-      <p>      hadiah 2 : <?php echo @$dataPartner[0]['clue2'] ?></p>
-      <p>        hadiah 3 : <?php echo @$dataPartner[0]['clue3'] ?></p>
-
+      <p>      hadiah 1 : <?php echo $dataPartner[0]['clue1'] ?></p>
+      <p>      hadiah 2 : <?php echo $dataPartner[0]['clue2'] ?></p>
+      <p>      hadiah 3 : <?php echo $dataPartner[0]['clue3'] ?></p>
+      
+      Partner anda <b><?php echo $dataPartner[0]['code'] ?></b> membayar kelebihan jika barang melebihi batas harga yang ditentukan panitia.
 
 <hr>
      <h4>

@@ -13,7 +13,7 @@
 			
 			<hr>
 			<h4>Pairing belum dibuka</h4>
-			<div style="display:none">
+			<div style="display:block">
 			<?php 
 			if(@$data[0]['transmiting']==1){
 				echo '<h4>Kamu sudah Pairing </br>';

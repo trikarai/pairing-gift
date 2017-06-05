@@ -7,7 +7,7 @@
          parent::__construct();
          $this->load->library(array('form_validation'));
          $this->load->helper(array('url','form'));
-         $this->load->model('m_account'); //call model
+         $this->load->model('M_account'); //call model
      }
  
      public function index() {
@@ -30,11 +30,18 @@
              $data['email']  =    $this->input->post('email');
              $data['password'] =    md5($this->input->post('password'));
  
-             $this->m_account->daftar($data);
+			//set id column value as UUID
+			$this->db->set('id_user', 'UUID()', FALSE);	
+             $this->M_account->daftar($data);
              
-             $pesan['message'] =    "Pendaftaran berhasil";
-             
-             $this->load->view('account/v_success',$pesan);
+             $data['message'] =    "Pendaftaran berhasil";
+             $data['title'] = "Register";
+		     $data['body'] = "account/v_success";
+		     $data['styles'] = "includes/styles_data_table";
+
+			 $this->load->view('includes/template_site', $data);
+			 
+             // $this->load->view('account/v_success',$pesan);
          }
      }
  }

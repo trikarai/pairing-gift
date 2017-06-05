@@ -7,7 +7,7 @@
          parent::__construct();
          $this->load->library(array('form_validation'));
          $this->load->helper(array('url','form'));
-         $this->load->model('m_account'); //call model
+         $this->load->model('M_account'); //call model
      }
  
      public function index() {
@@ -15,10 +15,10 @@
          $this->form_validation->set_rules('clue1', '','');
          $this->form_validation->set_rules('clue2','','');
          $this->form_validation->set_rules('clue3','','');
-         $this->form_validation->set_rules('accept','Term & Condition','required');
+         $this->form_validation->set_rules('code','Term & Condition','required');
          	 
         if($this->form_validation->run() == FALSE) {
-			$data['dataPresent'] = $this->m_account->detailPresent($this->session->userdata('id_user'));
+			$data['dataPresent'] = $this->M_account->detailPresent($this->session->userdata('id_user'));
 
 			$data['title'] = "Present";
 			$data['body'] = "present/present_body";
@@ -31,9 +31,11 @@
 			$data['clue1'] = $this->input->post('clue1');
 			$data['clue2'] = $this->input->post('clue2');
 			$data['clue3'] = $this->input->post('clue3');
+                        $data['code'] = $this->input->post('code');
+                        
         
-        $this->m_account->setPresent($data);
-        $this->m_account->updatePresent($this->input->post('id_user'));
+        $this->M_account->setPresent($data);
+        $this->M_account->updatePresent($this->input->post('id_user'));
              
              $data['message'] =    "Pengisian Hadiah berhasil";
              

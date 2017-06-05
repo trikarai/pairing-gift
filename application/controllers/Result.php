@@ -5,12 +5,12 @@
      function __construct(){
          parent::__construct();
          $this->simple_login->cek_login();
-         $this->load->model('m_account');
+         $this->load->model('M_account');
      }
  
      //Load Halaman 
      public function index() {
-         $data['dataPartner'] = $this->m_account->detailPartner($this->session->userdata('id_user'));
+         $data['dataPartner'] = $this->M_account->detailPartner($this->session->userdata('id_user'));
          
 		 $data['title'] = "Pairing";
 			$data['body'] = "pairing/result_body";

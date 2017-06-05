@@ -26,9 +26,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 $link = "http" . ((isset($_SERVER['HTTPS'])&& $_SERVER['HTTPS']=="on")? "s":"")."://" ;
 $server = isset($_SERVER['HTTP_POST']) ? $_SERVER['HTTP_POST'] : $_SERVER['SERVER_NAME'];
+$root=(isset($_SERVER['HTTPS']) ? "https://" : "http://").$_SERVER['HTTP_HOST'];
+$root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
 
 $config['base_url'] = $link.$server;
+// $config['base_url'] = $root;
 $config['base_url'] .= preg_replace('@/+$@', '', dirname($_SERVER['SCRIPT_NAME'])).'/';
+$config['assets_dir'] = $root.'assets/';
+$config['plugins_dir'] = $root.'assets/global/plugins/';
+$config['site_title'] = 'Gropela Bukber 2017';
 
 /*
 |--------------------------------------------------------------------------

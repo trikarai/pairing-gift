@@ -1,6 +1,7 @@
- <?php
- defined('BASEPATH') OR exit('No direct script access allowed');
- ?><!DOCTYPE html>  
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?>
+<!--<!DOCTYPE html>  
  <head>
    <meta charset="UTF-8">
    <title>
@@ -39,4 +40,40 @@
            Kembali ke beranda, Silakan klik <?php echo anchor(site_url().'beranda','di sini..'); ?>
       </p>
  </body>
- </html>
+ </html>-->
+
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8"/>
+<title><?php echo $this->config->item('site_title');?> - <?php echo $title; ?></title><meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta content="Copyright 2015 © Nagabendu Teknologi Utama" name="copyright"/>
+<meta content="" name="description"/>
+<meta content="Nagabendu Teknologi Utama" name="author"/>
+
+<?php $this->load->view('includes/styles_login'); ?> 
+
+</head>
+
+<body class="login">
+
+<div class="logo">
+	<!--<a href="index.html">
+	<img src="../../assets/admin/layout2/img/logo-big.png" alt=""/>
+	</a>-->
+</div>
+
+<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+<div class="menu-toggler sidebar-toggler">
+</div>
+<!-- END SIDEBAR TOGGLER BUTTON -->
+
+<?php $this->load->view($body); ?> 
+
+
+<!-- Scripts -->  
+<?php $this->load->view('includes/scripts_login'); ?> 
+
+</body>
+</html>

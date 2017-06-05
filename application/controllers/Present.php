@@ -18,21 +18,30 @@
          $this->form_validation->set_rules('accept','Term & Condition','required');
          	 
         if($this->form_validation->run() == FALSE) {
-            $data['dataPresent'] = $this->m_account->detailPresent($this->session->userdata('id_user'));
-            
-            $this->load->view('present/v_present',$data);
+			$data['dataPresent'] = $this->m_account->detailPresent($this->session->userdata('id_user'));
+
+			$data['title'] = "Present";
+			$data['body'] = "present/present_body";
+			$data['styles'] = "includes/styles_data_table";
+
+			$this->load->view('includes/template_site', $data);
+            // $this->load->view('present/v_present',$data);
         }else{
-            $data['id_user'] = $this->input->post('id_user');
-            $data['clue1'] = $this->input->post('clue1');
-            $data['clue2'] = $this->input->post('clue2');
-            $data['clue3'] = $this->input->post('clue3');
+			$data['id_user'] = $this->input->post('id_user');
+			$data['clue1'] = $this->input->post('clue1');
+			$data['clue2'] = $this->input->post('clue2');
+			$data['clue3'] = $this->input->post('clue3');
         
         $this->m_account->setPresent($data);
         $this->m_account->updatePresent($this->input->post('id_user'));
              
-             $pesan['message'] =    "Pengisian Hadiah berhasil";
+             $data['message'] =    "Pengisian Hadiah berhasil";
              
-             $this->load->view('present/v_success',$pesan);
+             $data['title'] = "Present";
+		     $data['body'] = "present/present_body";
+		     $data['styles'] = "includes/styles_data_table";
+
+			 $this->load->view('includes/template_site', $data);
          }
      }
  }

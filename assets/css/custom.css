@@ -1,0 +1,29 @@
+.flexigrid div.form-div input[type=text],.flexigrid div.form-div input[type=password]{height:auto}.checkbox,.radio{display:inline;margin-bottom:0;margin-top:5px}
+
+.logo-sertifikat{
+  right: 0;
+  height: 70px;
+  width: 150px;
+  position: absolute;
+  background-image: url(../img/comodo-secure.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 50px;
+  margin: 0 20px 0 0;
+}
+
+.logo-sertifikat-center{
+  height: 70px;
+  width: 150px;
+  background-image: url(../img/comodo-secure.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 50px;
+  margin: 20px auto;
+}
+
+.page-footer-inner {
+  float: left;
+  display: inline-block;
+  margin: 30px 0 0 0;
+}

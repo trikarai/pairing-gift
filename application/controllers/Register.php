@@ -17,7 +17,13 @@
          $this->form_validation->set_rules('password','PASSWORD','required');
          $this->form_validation->set_rules('password_conf','PASSWORD','required|matches[password]');
          if($this->form_validation->run() == FALSE) {
-             $this->load->view('account/v_register');
+			$this->data['title'] = "Login";
+			$this->data['body'] = "account/register_body";
+			
+			$this->load->view('account/v_login', $this->data);
+			 
+			 
+             // $this->load->view('account/v_register');
          }else{
  
              $data['name']   =    $this->input->post('name');

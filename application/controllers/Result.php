@@ -11,6 +11,12 @@
      //Load Halaman 
      public function index() {
          $data['dataPartner'] = $this->m_account->detailPartner($this->session->userdata('id_user'));
-         $this->load->view('pairing/v_result',$data);
+         
+		 $data['title'] = "Pairing";
+			$data['body'] = "pairing/result_body";
+			$data['styles'] = "includes/styles_data_table";
+
+			$this->load->view('includes/template_site', $data);
+		 // $this->load->view('pairing/v_result',$data);
      }
  }

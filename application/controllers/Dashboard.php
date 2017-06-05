@@ -12,6 +12,11 @@
      //Load Halaman dashboard
      public function index() {
          $data['data'] = $this->m_account->cekStatusPairing($this->session->userdata('id_user'));
-         $this->load->view('account/v_dashboard',$data);
+         $data['title'] = "Dashboard";
+         $data['body'] = "account/dashboard_body";
+         $data['styles'] = "includes/styles_data_table";
+		 
+		 $this->load->view('includes/template_site', $data);
+		 // $this->load->view('account/v_dashboard',$data);
      }
  }

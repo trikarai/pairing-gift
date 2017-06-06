@@ -17,6 +17,7 @@
 			$data['title'] = "Pairing";
 			$data['body'] = "pairing/pairing_body";
 			$data['styles'] = "includes/styles_data_table";
+                        
 
 			$this->load->view('includes/template_site', $data);
 				

@@ -5,6 +5,7 @@
 
   var $table = "user";
   var $key = "id_user";
+  var $keyName = "name";
   
   function __construct(){
 	  parent::__construct();
@@ -79,6 +80,19 @@
       $this->db->where($this->key,$id_partner);
       $this->db->update($this->table,$dataR);
       
+  }
+  
+  function getRegistrans(){
+      $this->db->order_by($this->keyName, 'ASC');
+      $query = $this->db->get($this->table);
+        if ($query->num_rows() > 0) {
+            foreach ($query->result_array() as $row) {
+                $result[] = $row;
+            }
+            return $result;
+        } else {
+            return false;
+        }
   }
 	   
   }

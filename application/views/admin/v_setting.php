@@ -16,7 +16,7 @@
     
     Status : <?php 
     
-    if($data[0]['status']==0){
+    if($data==0){
         echo "Close";
     }else{
         echo "Open";

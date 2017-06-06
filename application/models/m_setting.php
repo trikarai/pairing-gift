@@ -11,8 +11,9 @@
   }
     
   function cekStatusSetting(){
-      $query = $this->db->query("SELECT status FROM $this->table WHERE id = 1");
-      return $query->result_array();
+      $query = $this->db->query("SELECT status FROM $this->table WHERE id = 1");      
+      $row = $query->row(); 
+      return $row->status;     
   }
   function setData($data){
       $this->status = $data['status'];

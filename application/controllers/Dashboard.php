@@ -12,6 +12,9 @@
      //Load Halaman dashboard
      public function index() {
          $data['data'] = $this->M_account->cekStatusPairing($this->session->userdata('id_user'));
+         $data['registran'] = $this->M_account->getRegistrans();
+         $data['status'] = $this->M_setting->cekStatusSetting();
+
          $data['title'] = "Dashboard";
          $data['body'] = "account/dashboard_body";
          $data['styles'] = "includes/styles_data_table";

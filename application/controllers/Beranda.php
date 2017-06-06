@@ -22,13 +22,13 @@ class Beranda extends CI_Controller {
 		$this->form_validation->set_rules('status', 'STATUS','required');
 		if($this->form_validation->run() == FALSE){
 
-			$data['data'] = $this->m_setting->cekStatusSetting();
+			$data['data'] = $this->M_setting->cekStatusSetting();
 			$this->load->view('admin/v_setting',$data);
 		} else {
 			$data['status'] = $this->input->post('status');
 			
-			$this->m_setting->setData($data);
-			$this->m_setting->updateSetting();
+			$this->M_setting->setData($data);
+			$this->M_setting->updateSetting();
 				
 			 $pesan['message'] =    "Perubahan setting berhasil";
 			 

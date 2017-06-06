@@ -29,16 +29,24 @@
  
      <p>Hadiah 3:</p>
      <p>
-     <input type="text" class="form-control input-lg" placeholder="Hadiah 3" name="clue3" value="<?php echo @$dataPresent[0]['clue3'];; ?>"/>
+     <input type="text" class="form-control input-lg" placeholder="Hadiah 3" name="clue3" value="<?php echo @$dataPresent[0]['clue3']; ?>"/>
      </p>
      <span class="red"> <?php echo form_error('clue3'); ?> </span>
  
  <p>Term and Conditions:</p>
- 
+ <?php echo @$dataPresent[0]['code']; ?>
  <p>setuju membayar kelebihan jika barang melebihi batas harga yang ditentukan panitia?</p>
     <p>
-        <input type="radio" name="code" value="Yes"/>Yes<br>
-        <input type="radio" name="code" value="No"/>No<br>
+        <?php 
+        if($dataPresent[0]['code']=='Setuju'){
+            echo '<input type="radio" name="code" value="Setuju" checked/> Setuju<br>';
+            echo '<input type="radio" name="code" value="Tidak Setuju"/>Tidak Setuju<br>';
+        }else{
+            echo '<input type="radio" name="code" value="Setuju" /> Setuju<br>';
+            echo '<input type="radio" name="code" value="Tidak Setuju" checked/>Tidak Setuju<br>';
+        }
+        
+        ?>
      </p>
      <span class="red"> <?php echo form_error('code'); ?> </span>
  

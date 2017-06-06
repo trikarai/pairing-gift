@@ -10,7 +10,7 @@
  
      public function index() {
  
-         $data['title'] = "Present";
+         $data['title'] = "Rules Kado";
 		 $data['body'] = "rules";
 		 $data['styles'] = "includes/styles_data_table";
 

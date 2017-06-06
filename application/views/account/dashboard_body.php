@@ -23,7 +23,25 @@
 			
 			<hr>
 			
-			<div style="display:block">
+			<div style="
+                             <?php if($status==1){
+                                 echo "display:none";
+                             }else{
+                                 echo "display:block";
+                             }
+                             ?> 
+                             ">
+                        <h4>Pairing belum dibuka </h4>
+                        </div>
+			
+			<div style="
+                             <?php if($status==0){
+                                 echo "display:none";
+                             }else{
+                                 echo "display:block";
+                             }
+                             ?> 
+                             ">
 			<?php 
 			if(@$data[0]['transmiting']==1){
 				echo '<h4>Kamu sudah Pairing </br>';
@@ -33,6 +51,33 @@
 			}
 			?>
 			</div>
+                         <hr>
+                        <h4>Data Registrans</h4>
+                        <div>
+                            <table width="100%  ">
+                                <tr>
+                                    <td>No</td>
+                                    <td>Name</td>
+                                </tr>
+                                
+                                <?php if(@$registran):?>
+                                <?php $i=1; ?>
+                                <?php foreach ($registran as $row):?>
+                                <tr>
+                                    <td><?php echo $i;?></td>
+                                    <td><?php echo $row['name']?></td>
+                                </tr>
+                        <?php $i++; ?>
+                        <?php endforeach?>
+                        <?php else:?>
+                        <tr>
+                            <td colspan="3" align="center">Data tidak ada</td>
+                        </tr>
+                    <?php endif; ?>
+                    </table>
+                                    
+                                    
+                        </div>
 		</div>
 	</div>
 </div>

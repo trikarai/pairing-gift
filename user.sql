@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 05, 2017 at 08:39 AM
+-- Generation Time: Jun 06, 2017 at 08:05 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -46,7 +46,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `email`, `password`, `code`, `name`, `clue1`, `clue2`, `clue3`, `transmiting`, `receiving`, `status`, `partner_id`) VALUES
-(0x61303531383332632d343962392d3131, 'tri@barapraja.com', '202cb962ac59075b964b07152d234b70', '', 'Tri', '', '', '', 0, 0, 1, 0x00000000000000000000000000000000);
+(0x61303531383332632d343962392d3131, 'tri@barapraja.com', '202cb962ac59075b964b07152d234b70', 'No', 'Tri', 'dwdwasa', 'dwdsassasa', 'dwdwsasasasa', 1, 0, 1, 0x61303531383332632d343962392d3132),
+(0x61303531383332632d343962392d3132, 'a@a.com', '202cb962ac59075b964b07152d234b70', 'Setuju', 'aaaaa', 'asasa', 'sasas', 'sasasa', 0, 1, 1, 0x00000000000000000000000000000000);
 
 --
 -- Indexes for dumped tables

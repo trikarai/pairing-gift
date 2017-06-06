@@ -34,8 +34,7 @@
      <span class="red"> <?php echo form_error('clue3'); ?> </span>
  
  <p>Term and Conditions:</p>
- <?php echo @$dataPresent[0]['code']; ?>
- <p>setuju membayar kelebihan jika barang melebihi batas harga yang ditentukan panitia?</p>
+ <p>Setuju membayar kelebihan jika barang melebihi batas harga yang ditentukan panitia? <?php echo anchor('rules','Rules');?> </p>
     <p>
         <?php 
         if($dataPresent[0]['code']=='Setuju'){

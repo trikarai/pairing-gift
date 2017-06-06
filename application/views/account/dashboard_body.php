@@ -16,13 +16,19 @@
 			</h3>
 			
 			<hr/>
-			
+			<div style="
+                             <?php if($status==1){
+                                 echo "display:none";
+                             }else{
+                                 echo "display:block";
+                             }
+                             ?> 
+                             ">
 			<h4>Yuk Isi Hadiahnya &nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;
 				<?php echo anchor('present','di sini');?>
 			</h4>
-			
-			<hr>
-			
+                        <hr>
+                        </div>
 			<div style="
                              <?php if($status==1){
                                  echo "display:none";
